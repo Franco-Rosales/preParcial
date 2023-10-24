@@ -42,6 +42,7 @@ public class ArtistServices {
         Optional<Artist> existingArtist = artistRepository.findById(id);
         if (existingArtist.isPresent()) {
             Artist artist = convertToEntity(artistDto);
+            artist.setArtistId(id);
             Artist updatedArtist = artistRepository.save(artist);
             return convertToDto(updatedArtist);
         } else {
