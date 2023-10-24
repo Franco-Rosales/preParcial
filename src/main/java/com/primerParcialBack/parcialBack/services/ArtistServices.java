@@ -26,12 +26,13 @@ public class ArtistServices {
         return artist.map(this::convertToDto).orElse(null);
     }
 
-    public ArtistDto save(ArtistDto artistDto) {
-        Artist artist = convertToEntity(artistDto);
-        Artist savedArtist = artistRepository.save(artist);
+    public Artist save(ArtistDto artistDto) {
+        Artist artist = new Artist();
+        artist.setName(artistDto.getName());
         this.artistRepository.save(artist);
-        return convertToDto(savedArtist);
+        return artist;
     }
+
 
     public void deleteById(Long id) {
         artistRepository.deleteById(id);
