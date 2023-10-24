@@ -49,7 +49,7 @@ public class AlbumServices {
         }
         private AlbumDto convertToDto(Albums albums) {
             AlbumDto albumDto = new AlbumDto();
-            albumDto.setArtistId(albums.getAlbumId());
+            albumDto.setAlbumId(albums.getAlbumId());
             albumDto.setTitle(albums.getTiltle());
             albumDto.setArtistId(albums.getArtist().getArtistId());
             return albumDto;
