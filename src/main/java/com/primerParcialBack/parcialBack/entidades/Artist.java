@@ -37,14 +37,13 @@ import java.util.List;
 public class Artist {
 
     @Id
-    @GeneratedValue(generator = "artistsGenerator") // Cambia el nombre del generador
+    @GeneratedValue(generator = "artistsGenerator")
     @TableGenerator(name = "artistsGenerator", table = "sqlite_sequence",
             pkColumnName = "name", valueColumnName = "seq",
-            pkColumnValue = "artists", // Cambia el valor de pkColumnValue
+            pkColumnValue = "artists",
             initialValue = 1, allocationSize = 1)
-    @Column(name = "artistid") // Asegúrate de que el nombre de la columna coincida con el de tu base de datos
-    private long artistId; // Cambia el nombre del campo a minúsculas
-
+    @Column(name = "artistid")
+    private long artistId;
     @Column(name = "name")
     private String name;
 

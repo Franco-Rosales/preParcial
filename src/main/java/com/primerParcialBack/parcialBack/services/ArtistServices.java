@@ -47,20 +47,20 @@ public class ArtistServices {
             return convertToDto(updatedArtist);
         } else {
             return null;
-           }
         }
-        private ArtistDto convertToDto(Artist artist) {
-            ArtistDto artistDto = new ArtistDto();
-            artistDto.setArtistId(artist.getArtistId());
-            artistDto.setName(artist.getName());
-            return artistDto;
-        }
+    }
+    private ArtistDto convertToDto(Artist artist) {
+        ArtistDto artistDto = new ArtistDto();
+        artistDto.setArtistId(artist.getArtistId());
+        artistDto.setName(artist.getName());
+        return artistDto;
+    }
 
-        private Artist convertToEntity(ArtistDto artistDto) {
-            Artist artist = new Artist();
-            artist.setName(artistDto.getName());
-            return artist;
-        }
+    private Artist convertToEntity(ArtistDto artistDto) {
+        Artist artist = new Artist();
+        artist.setName(artistDto.getName());
+        return artist;
+    }
 
 
 }
