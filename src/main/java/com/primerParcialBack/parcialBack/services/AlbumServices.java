@@ -51,6 +51,7 @@ public class AlbumServices {
             AlbumDto albumDto = new AlbumDto();
             albumDto.setArtistId(albums.getAlbumId());
             albumDto.setTitle(albums.getTiltle());
+            albumDto.setArtistId(albums.getArtist().getArtistId());
             return albumDto;
         }
 

@@ -1,11 +1,8 @@
 package com.primerParcialBack.parcialBack.controller;
 
 import com.primerParcialBack.parcialBack.dtos.AlbumDto;
-import com.primerParcialBack.parcialBack.dtos.ArtistDto;
 import com.primerParcialBack.parcialBack.entidades.Albums;
-import com.primerParcialBack.parcialBack.entidades.Artist;
 import com.primerParcialBack.parcialBack.services.AlbumServices;
-import com.primerParcialBack.parcialBack.services.ArtistServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

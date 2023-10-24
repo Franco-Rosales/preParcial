@@ -53,12 +53,23 @@ public class TrackServices {
         TrackDto trackDto = new TrackDto();
         trackDto.setTrackId(tracks.getTrackId());
         trackDto.setName(tracks.getName());
+        trackDto.setAlbumId(tracks.getAlbumId().getAlbumId());
+        trackDto.setMediaTypeId(tracks.getMediaTypeId().getMediaTypeId());
+        trackDto.setGenreId(tracks.getGenreId().getGenreId());
+        trackDto.setComposer(tracks.getComposer());
+        trackDto.setMilliseconds(tracks.getMilliseconds());
+        trackDto.setBytes(tracks.getBytes());
+        trackDto.setUnitPrice(tracks.getUnitPrice());
         return trackDto;
     }
 
     private Tracks convertToEntity(TrackDto trackDto) {
         Tracks tracks = new Tracks();
         tracks.setName(trackDto.getName());
+        tracks.setComposer(trackDto.getComposer());
+        tracks.setMilliseconds(trackDto.getMilliseconds());
+        tracks.setBytes(trackDto.getBytes());
+        tracks.setUnitPrice(trackDto.getUnitPrice());
         return tracks;
     }
 }

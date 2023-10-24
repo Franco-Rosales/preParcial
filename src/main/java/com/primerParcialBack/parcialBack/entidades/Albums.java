@@ -23,7 +23,6 @@ public class Albums {
     @Column(name = "title")
     private String tiltle;
 
-
     @ManyToOne
     @JoinColumn(name = "artistid", referencedColumnName = "artistid")
     private Artist artist;
