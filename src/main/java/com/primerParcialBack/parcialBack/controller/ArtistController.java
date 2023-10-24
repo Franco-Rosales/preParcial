@@ -2,6 +2,7 @@ package com.primerParcialBack.parcialBack.controller;
 
 
 import com.primerParcialBack.parcialBack.dtos.ArtistDto;
+import com.primerParcialBack.parcialBack.entidades.Artist;
 import com.primerParcialBack.parcialBack.services.ArtistServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -35,8 +36,8 @@ public class ArtistController {
     }
 
     @PostMapping
-    public ResponseEntity<ArtistDto> addAritst(@RequestBody ArtistDto artist) {
-        ArtistDto createdArtist = artistServices.save(artist);
+    public ResponseEntity<Artist> addAritst(@RequestBody ArtistDto artist) {
+        Artist createdArtist = artistServices.save(artist);
         if (createdArtist != null) {
 //           return ResponseEntity.status(HttpStatus.CREATED).body(createdCompany);
             return ResponseEntity.ok(createdArtist);
@@ -44,5 +45,21 @@ public class ArtistController {
             // Manejo de error si no se pudo crear la empresa
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
-    }};
+    }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<ArtistDto> updateArtist(@PathVariable("id") Long artistId, @RequestBody ArtistDto artistDto) {
+        ArtistDto updatedArtist = artistServices.update(artistId, artistDto);
+        if (updatedArtist != null) {
+            return ResponseEntity.ok(updatedArtist);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteArtist(@PathVariable Long id) {
+        artistServices.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
+}
