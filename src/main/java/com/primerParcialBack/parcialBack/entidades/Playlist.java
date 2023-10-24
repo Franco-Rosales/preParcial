@@ -18,7 +18,7 @@ public class Playlist {
             pkColumnValue = "playlists",
             initialValue = 1, allocationSize = 1)
     @Column(name = "playlistid")
-    private long playlisId;
+    private long playlistId;
 
     @Column(name = "name")
     private String name;

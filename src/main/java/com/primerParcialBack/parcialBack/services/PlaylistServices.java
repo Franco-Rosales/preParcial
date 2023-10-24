@@ -42,7 +42,7 @@ public class PlaylistServices {
         Optional<Playlist> existingPlaylist = playlistRepository.findById(id);
         if (existingPlaylist.isPresent()) {
             Playlist playlist = convertToEntity(playlistDto);
-            playlist.setPlaylisId(id);
+            playlist.setPlaylistId(id);
             Playlist updatedPlaylist = playlistRepository.save(playlist);
             return convertToDto(updatedPlaylist);
         } else {
@@ -51,7 +51,7 @@ public class PlaylistServices {
     }
     private PlaylistDto convertToDto(Playlist playlist) {
         PlaylistDto playlistDto = new PlaylistDto();
-        playlistDto.setPlaylistId(playlist.getPlaylisId());
+        playlistDto.setPlaylistId(playlist.getPlaylistId());
         playlistDto.setName(playlist.getName());
         return playlistDto;
     }

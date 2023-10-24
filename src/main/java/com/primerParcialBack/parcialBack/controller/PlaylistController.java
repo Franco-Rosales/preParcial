@@ -34,7 +34,7 @@ public class PlaylistController {
     }
 
     @PostMapping
-    public ResponseEntity<Playlist> addAritst(@RequestBody PlaylistDto playlist) {
+    public ResponseEntity<Playlist> addPlaylist(@RequestBody PlaylistDto playlist) {
         Playlist createdPlaylist = playlistServices.save(playlist);
         if (createdPlaylist != null) {
             return ResponseEntity.ok(createdPlaylist);
