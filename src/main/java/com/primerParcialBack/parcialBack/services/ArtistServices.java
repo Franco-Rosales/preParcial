@@ -33,6 +33,7 @@ public class ArtistServices {
         return artist;
     }
 
+
     public void deleteById(Long id) {
         artistRepository.deleteById(id);
     }

@@ -47,6 +47,7 @@ public class ArtistController {
         }
     }
 
+
     @PutMapping("/{id}")
     public ResponseEntity<ArtistDto> updateArtist(@PathVariable("id") Long artistId, @RequestBody ArtistDto artistDto) {
         ArtistDto updatedArtist = artistServices.update(artistId, artistDto);
@@ -62,4 +63,5 @@ public class ArtistController {
         artistServices.deleteById(id);
         return ResponseEntity.noContent().build();
     }
-}
+};
+
